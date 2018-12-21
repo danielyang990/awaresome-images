@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://jingyan.baidu.com/album/ad310e80e0c1d11848f49e7f.html?picindex=2 -->
+<html style=""><!--STATUS OK--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="referrer" content="always"><title>
+怎样在github上发布pre-release和release_互联网_百度经验</title><link rel="shortcut icon" href="https://jingyan.baidu.com/favicon.ico?v=20171030" type="image/x-icon"><link rel="icon" sizes="any" mask="" href="https://exp.bdstatic.com/static/common-jquery/widget/img-baidu-com/baidu_icon_85beaf5.svg">
+<script async="" src="./git-flow_files/dp.min.js"></script><script src="./git-flow_files/hm.js"></script><script async="" src="./git-flow_files/alog.min.js"></script><script>
+    window.alogObjectConfig = {
+        sample: '1',
+ 
+        product: '132',  
+        page: '132_1510',  
+ 
+        speed: {
+            sample: '0.12'   
+        },
+ 
+        monkey: {
+            sample: '0.12'   
+        },
+ 
+        exception: { 
+            sample: '0.12'   
+        },
+ 
+        feature: {
+            sample: '0.12'   
+        },
+ 
+        cus: {
+            sample: '0'   
+        },
+ 
+        csp: {
+            sample: '0.12',  
+            'default-src': [
+                {match: '*bae.baidu.com', target: 'Accept,Warn'},
+                {match: '*.baidu.com,*.bdstatic.com,*.baidustatic.com,*.baiduimg.com,*.bdimg.com,localhost,*.hao123.com,*.hao123img.com,*.baidubce.com', target: 'Accept'},
+                {match: /^(127|172|192|10)(\.\d+){3}$/, target: 'Accept'},
+                {match: '*', target: 'Accept,Warn'}
+            ]
+        }
+    };
+ 
+     void function(a,b,c,d,e,f,g){a.alogObjectName=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=a[e].l||+new Date,d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d;var h=!0;if(a.alogObjectConfig&&a.alogObjectConfig.sample){var i=Math.random();a.alogObjectConfig.rand=i,i>a.alogObjectConfig.sample&&(h=!1)}h&&(f=b.createElement(c),f.async=!0,f.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),g=b.getElementsByTagName(c)[0],g.parentNode.insertBefore(f,g))}(window,document,"script","/hunter/alog/alog.min.js","alog"),void function(){function a(){}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date),alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:a,tti:a,page_ready:a}}();
+    void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+</script>
+
+<meta itemprop="dateUpdate" content="2017-11-23 11:37:32">
+
+<meta name="keywords" content="怎样在github上发布pre-release和release,互联网,游戏/数码">
+
+<meta name="description" content="怎样在github上发布pre-release和release,在查看开源的项目时，经常会看到预发布，这是一个特别有用的功能。这里讲解一下如何使用。">
+<script type="text/javascript">!function(){var n={},e={};n.context=function(n,r){var t=arguments.length;if(t>1)e[n]=r;else if(1==t){if("object"!=typeof n)return e[n];for(var i in n)n.hasOwnProperty(i)&&(e[i]=n[i])}else if(0==t)return e},"F"in window||(window.F=n)}();;</script><!--[if lt IE 9]><script type="text/javascript" src="/static/common/tool/html5.js"></script><![endif]--><script>var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "//hm.baidu.com/hm.js?46c8852ae89f7d9526f0082fafa15edd"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();</script><link rel="stylesheet" type="text/css" href="./git-flow_files/common_sync_css_0_ac131f3.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/common_async_css_0_c8d78e9.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/step_7a6faae.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/redbox_9454f10.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/userbar_54af88e.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/special-msg_d02dba8.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/go-and-see_d818767.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/douniwan_6ec14e6.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/school2016_b4c6cb1.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/badge_2385538.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/super-2016_46f8488.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/marathon_d00c0a0.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/redbox-video_68a545b.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/prize2017_99af780.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/msg_8ee3316.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/amazing-2016_b458231.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/jquery-ui_d16d3c5.css"><link rel="stylesheet" type="text/css" href="./git-flow_files/footer_afbb86d.css"><script> 
+	if(typeof(alog) !== 'undefined') {
+		alog('speed.set', 'ht', +new Date); 
+	}
+</script></head>
+<body class="" style=""><header class="header" style="height: 92px;">
+<div class="top clearfix">
+<div class="top-left">
+<a href="http://jingyan.baidu.com/article/ad310e80e0c1d11848f49e7f.html" class="back" log="type:2016,module:step,page:index,pos:header_back,action:click"></a>
+</div>
+<div class="top-right">
+<ul class="options clearfix">
+<li>
+<a href="javascript:;" id="vote-btn" class="vote" log="type:2016,module:step,page:index,pos:header_vote,action:click">
+<b class="num">1</b>
+<b class="hover-tip">投票</b>
+<b class="tip">已投票</b>
+</a>
+</li>
+<li>
+<a href="javascript:;" id="favor-btn" class="favor" log="type:2016,module:step,page:index,pos:header_favor,action:click">
+<b class="num">1</b>
+<b class="hover-tip">收藏+1</b>
+<b class="tip">已收藏</b>
+</a>
+</li>
+</ul>
+</div>
+<div class="title" id="exp-title" style="left: 172px;">
+<h1>
+怎样在github上发布pre-release和release?
+<div class="audio-wp" data-title="" data-text="" data-for="" style="display: inline-block;">
+<span class="audio-inner">
+<span class="audio-icon"></span><span class="audio-icon-2"></span><span class="audio-icon-3"></span></span>
+<span class="desc">听语音</span>
+</div>
+</h1>
+</div>
+<form action="https://jingyan.baidu.com/search" name="step-search-form" method="get" id="step-search-form" class="step-search-form" style="display: block; left: 800px; width: 330px;">
+<input class="keyword" id="keyword" autocomplete="off" maxlength="256" tabindex="1" size="23" name="word" placeholder="请输入搜索内容" value="" style="width: 250px;">
+<input type="submit" class="submitBtn" value="搜索经验">
+</form>
+</div>
+</header>
+<div class="waiting-step-loading" id="waiting-step-loading" style="display: none;">
+<div class="tip-placehoder"></div>
+<div class="loading-tip">
+<p class="exp-tip">
+百度经验</p>
+<p class="loading-data-tip">
+页面数据加载中...</p>
+</div>
+</div>
+<section class="body-wrapper"><section class="body" id="body" style="height: 529px;">
+<div class="step-container">
+<div class="left-cover" id="left-cover" style="height: 529px; width: 172px;">
+<div class="previous-arrow"></div>
+</div>
+<div class="step-play-container" id="step-play-container" style="left: 172px;">
+<div class="step-play-list" id="step-play-list" style="left: -920px;">
+<div class="step-item-container step-item-brief clearfix" id="step-item-0">
+<div class="writer-info left" id="brief-writer-info" style="height: 527.874px;">
+<div class="place_holder" style="height: 13%"></div>
+<div class="writer-info-inner" style="height: 74%;position: relative">
+<div class="writer-portrait">
+<a href="https://jingyan.baidu.com/user/npublic?uid=4f47bb335cc7299dfab43be9" target="_blank" title="最牛推荐" class="writer-portrait-container">
+<img src="./git-flow_files/18b9e69c80e7899be68ea8e88d90954f" title="最牛推荐" width="87px" height="87px" alt="最牛推荐">
+<div class="portrait-cover"></div>
+</a>
+</div>
+<div class="writer-basic">
+<div class="writer-basic-name">
+最牛推荐</div>
+<div class="icon-wrp">
+<div class="icon-huiz">
+</div>
+</div>
+</div>
+</div>
+<div class="place_holder" style="height: 13%"></div>
+</div>
+<div class="brief-info left">
+<div class="topright"></div>
+<div class="bottomright"></div>
+<div class="place_holder" style="height:9%"></div>
+<div class="brief-info-inner clearfix" style="height: 70%">
+<div class="brief-info-text left">
+<span class="left-quote" id="brief-left-quote" style="top: 154.213px;"></span>
+<div class="step-text-wrapper brief-text-area" texttype="brief-text-area" id="step-text-wrapper-0" style="position: absolute; top: 154.213px;">
+<p>在查看开源的项目时，经常会看到预发布，这是一个特别有用的功能。这里讲解一下如何使用。</p>
+</div>
+<span class="right-quote" id="brief-right-quote" style="display: block; bottom: 154.213px;"></span>
+</div>
+<div class="step-img-wrapper brief-info-img left" steptype="brief-info-img" imgloaded="2" style="height: 371.426px;">
+<div class="img-cover" style="height: 183px; width: 200px; margin-top: 94px; left: 0px;">
+<div class="inner-img-cover" data-src="dbf554ed2e738bd4a0f3529daa8b87d6267ff909" style="height: 183px; width: 200px;"></div>
+<img src="./git-flow_files/5bafa40f4bfbfbedb88bd6d373f0f736aec31f4f.jpg" data-src="https://imgsa.baidu.com/exp/w=200/sign=defea7174c10b912bfc1f1fef3fcfcb5/5bafa40f4bfbfbedb88bd6d373f0f736aec31f4f.jpg" _height="183" _width="200"></div>
+</div>
+</div>
+<div class="place_holder" style="height: 15%"></div>
+</div>
+</div>
+<div class="step-item-container" id="step-item-1">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">1</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-1">
+<p>首先，需要对项目管理有一个清晰的认识。这里推荐一个项目管理方法。这张图画的特别好，建议你花费点时间，看完图中的每一个流程。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="2" style="height: 389.434px;">
+<div class="img-cover" style="height: 625px; width: 480px; margin-top: -118px;">
+<div class="inner-img-cover" data-src="718e25c79f3df8dc1d88773dc611728b461028a2" style="height: 625px; width: 480px;"></div>
+<img src="./git-flow_files/0823dd54564e92581d817e429782d158cdbf4ee1.jpg" data-src="https://imgsa.baidu.com/exp/w=480/sign=6f44b145861001e94e3c1507880f7b06/0823dd54564e92581d817e429782d158cdbf4ee1.jpg" _height="625" _width="480"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-2">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">2</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-2">
+<p>预发布功能对应的下图中的红框部分。在正式的发布之前，可能需要进行多次迭代，可以用预发布跟踪记录这个过程。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="2" style="height: 389.434px;">
+<div class="img-cover" style="height: 595px; width: 480px; margin-top: -103px;">
+<div class="inner-img-cover" data-src="a84052086e061d95236dcc9470f40ad162d9ca30" style="height: 595px; width: 480px;"></div>
+<img src="./git-flow_files/8326cffc1e178a829017840cfd03738da977e877.jpg" data-src="https://imgsa.baidu.com/exp/w=480/sign=847813585ada81cb4ee682c56267d0a4/8326cffc1e178a829017840cfd03738da977e877.jpg" _height="595" _width="480"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-3">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">3</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-3">
+<p>代码提交后，登陆，进入到你的项目的主页，点击发布按钮。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="0" style="height: 389.434px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="35e940df8db1cb13eb00ddbfd654564e93584bf6"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=a16f8f29c2ea15ce41eee10186013a25/b90e7bec54e736d18d7a6da490504fc2d5626935.jpg"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-4">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">4</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-4">
+<p>如果还没有任何的发布，就选择新创建一个。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="0" style="height: 389.434px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="35da1d3b5bb5c9ea4f98e24fde39b6003bf3b3f0"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=6c2c0e2841ed2e73fce98724b700a16d/b3fb43166d224f4a7af292bf02f790529822d137.jpg"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-5">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">5</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-5">
+<p>填写发布信息，设置版本，添加说明，还可以附加二进制文件。最后勾选"预发布"。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="0" style="height: 389.434px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="b13fd48065380cd7fd4d4341aa44ad3458828188"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=0268c909017b02080cc93ee952d8f25f/6a600c338744ebf876228593d2f9d72a6159a7cf.jpg"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-6">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">6</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-6">
+<p>发布以后，会是这个样子。可以看到，自动生成了源代码的下载链接。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="0" style="height: 389.434px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="808a27dbb6fd52660f66ddb8a018972bd507368a"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=6bff58c89feef01f4d1419cdd0ff99e0/c8177f3e6709c93dafbfef5b943df8dcd00054c9.jpg"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-7">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">7</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-7">
+<p>如果要修改发布，点击右上角的"编辑发布”。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="0" style="height: 389.434px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="b25d9901a18b87d63f234ab30c0828381e30fdfe"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=dba1289f9945d688a302b3ac94c37dab/aa64034f78f0f736b79fadad0155b319ebc4133c.jpg"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-8">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">8</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-8">
+<p>进入修改页面后，可以看到这个发布已经绑定了标签。完成修改后，直接发布即可。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-one-img" steptype="step-one-img" imgloaded="0" style="height: 389.434px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="7ac880510fb30f24a8d40dafc395d143ac4b0395"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=b4ac592dc01349547e1ee96c664f92dd/738b4710b912c8fc29bd1761f7039245d78821d4.jpg"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container" id="step-item-9">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-item-textimg-inner clearfix" style="height:82%">
+<section class="step-text-container left">
+<header>
+<h3 class="step-item-header">
+<span class="current-order-in-step">9</span>/9
+</h3>
+</header>
+<div class="step-text-wrapper img-text-area" texttype="img-text-area" id="step-text-wrapper-9">
+<p>点击标签列表，可以看到自动生成的标签。</p>
+</div>
+</section>
+<section class="step-img-container left">
+<div class="step-img-wrapper step-two-img step-two-img-top" steptype="step-two-img" imgloaded="0" style="height: 187.964px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="8474fbdde71190effb027373c51b9d16fcfa6066"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=8137035670cb0a4685228a315b62f63e/0dd7912397dda14420f08d1eb9b7d0a20df486a5.jpg"></div>
+</div>
+<div class="step-img-wrapper step-two-img" steptype="step-two-img" imgloaded="0" style="height: 187.964px;">
+<div class="img-cover">
+<div class="inner-img-cover" data-src="4a77b2af2edda3cc0731598c0ae93901203f9202"></div>
+<img src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/w=480/sign=ea67747003fa513d51aa6dd60d6c554c/c8ea15ce36d3d539cde8ee6f3187e950342ab041.jpg"></div>
+</div>
+</section>
+</div>
+<div class="place_holder" style="height: 9%"></div>
+</div>
+<div class="step-item-container step-item-recommand" id="step-item-10">
+<div class="place_holder" style="height:9%"></div>
+<div class="step-recommand-inner" style="height: 72%;">
+<div class="replay">
+<dl class="clearfix">
+<dt class="replay-img left">
+<a class="replay-img-container" href="javascript:;" id="replay-step-e">
+<img class="recommand-img" alt="怎样在github上发布pre-release和release?" src="./git-flow_files/exp_loading.gif" data-src="https://imgsa.baidu.com/exp/whcrop=160,120/sign=5902fbef80d4b31cf069c2f9e8a61a4e/5bafa40f4bfbfbedb88bd6d373f0f736aec31f4f.jpg" width="160px" height="120px">
+<div class="img-border"></div>
+</a>
+</dt>
+<dd class="replay-title left">
+<h4>
+怎样在github上发布pre-release和release?
+</h4>
+<a href="javascript:;" id="replay-step" class="replay-step">[重新阅读]</a>
+</dd>
+</dl>
+</div>
+<div class="recommand-list clearfix" id="recommend-list-container"></div>
+</div>
+<div class="place_holder" style="height: 14%"></div>
+</div></div>
+<div class="guide-container" style="top: 176.5px; display: none;"><img src="./git-flow_files/user-guide_083b4c4.gif"></div></div>
+<div class="right-cover" id="right-cover" style="height: 529px; width: 188px;">
+<div class="next-arrow"></div>
+</div>
+</div>
+</section></section><footer class="footer">
+<script>
+    void function(e,t){for(var n=t.getElementsByTagName("img"),a=+new Date,i=[],o=function(){this.removeEventListener&&this.removeEventListener("load",o,!1),i.push({img:this,time:+new Date})},s=0;s< n.length;s++)!function(){var e=n[s];e.addEventListener?!e.complete&&e.addEventListener("load",o,!1):e.attachEvent&&e.attachEvent("onreadystatechange",function(){"complete"==e.readyState&&o.call(e,o)})}();alog("speed.set",{fsItems:i,fs:a})}(window,document);
+</script>
+<div class="step-pager" id="step-pager">
+<ul id="step-pager-list" class="clearfix" style="width: 480px;"><li class="item step" style="display: block;"><a href="javascript:;" class="step-cover" step-index="0">封</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview current" data="首先，需要对项目管理有一个清晰的认识。这里推荐一..." data-type="0" step-index="1">1</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="预发布功能对应的下图中的红框部分。在正式的发布之..." data-type="0" step-index="2">2</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="代码提交后，登陆，进入到你的项目的主页，点击发布..." data-type="0" step-index="3">3</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="如果还没有任何的发布，就选择新创建一个。" data-type="0" step-index="4">4</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="填写发布信息，设置版本，添加说明，还可以附加二进..." data-type="0" step-index="5">5</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="发布以后，会是这个样子。可以看到，自动生成了源代..." data-type="0" step-index="6">6</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="如果要修改发布，点击右上角的&quot;编辑发布..." data-type="0" step-index="7">7</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="进入修改页面后，可以看到这个发布已经绑定了标签。..." data-type="0" step-index="8">8</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="preview" data="点击标签列表，可以看到自动生成的标签。" data-type="0" step-index="9">9</a></li><li class="item step" style="display: block;"><a href="javascript:;" class="step-last" step-index="10">尾</a></li></ul>
+</div>
+</footer>
+<script type="text/javascript">
+    (function() {
+        //解决ie图片缓存闪烁问题
+        try {
+            document.execCommand("BackgroundImageCache", false, true);
+        } catch(err) {}
+    })();
+    //异步接口集
+    F.context({
+        //与个人相关
+        'submit_follow' : '/submit/follow',
+        'submit_vote' : '/submit/vote',
+        'submit_author' : '/submit/author',
+        'submit_user' : '/submit/user',
+        'submit_favor' : '/submit/favor',
+        'submit_notice' : '/submit/notice',
+        //公共的异步接口部分
+        'common_isLogin' : '/common/isLogin',
+        'common_isVersionExist' : '/common/isVersionExist',
+        'common_isTitleValid' : '/common/isTitleValid',
+        'common_needToTitle' : '/common/needToTitle',
+        'asyncreq' : '/asyncreq',
+        //评论相关
+        'cid' : '36',
+        'submit_comment' : '/submit/comment',
+        'submit_feedback' : '/submit/exp'
+    });
+</script>
+
+<script type="text/javascript">
+        F.context({
+            "BdStoken" : "3b5e60e916a14fb7b211dc6d9e3f2287",
+            "bdstt" : "1523591110",
+        });
+        F.context('BFEType', '2');
+    </script>
+<script>
+	if(typeof(alog) !== 'undefined'){
+    	alog('speed.set', 'drt', +new Date); 
+    }//请利用js框架在domreday时调用该代码，或在body的尾部
+</script>
+<script>
+    void function(a,b,c,d,e,f){function g(b){a.attachEvent?a.attachEvent("onload",b,!1):a.addEventListener&&a.addEventListener("load",b)}function h(a,c,d){d=d||15;var e=new Date;e.setTime((new Date).getTime()+1e3*d),b.cookie=a+"="+escape(c)+";path=/;expires="+e.toGMTString()}function i(a){var c=b.cookie.match(new RegExp("(^| )"+a+"=([^;]*)(;|$)"));return null!=c?unescape(c[2]):null}function j(){var a=i("PMS_JT");if(a){h("PMS_JT","",-1);try{a=a.match(/{["']s["']:(\d+),["']r["']:["']([\s\S]+)["']}/),a=a&&a[1]&&a[2]?{s:parseInt(a[1]),r:a[2]}:{}}catch(c){a={}}a.r&&b.referrer.replace(/#.*/,"")!=a.r||alog("speed.set","wt",a.s)}}if(a.alogObjectConfig){var k=a.alogObjectConfig.sample,l=a.alogObjectConfig.rand;d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d,k&&l&&l>k||(g(function(){alog("speed.set","lt",+new Date),e=b.createElement(c),e.async=!0,e.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),f=b.getElementsByTagName(c)[0],f.parentNode.insertBefore(e,f)}),j())}}(window,document,"script","/hunter/alog/dp.min.js");
+</script>
+<script type="text/javascript" src="./git-flow_files/common_sync_js_0_a73d02f.js"></script>
+<script type="text/javascript">require.resourceMap({"res":{"common-jquery:widget/lib/jquery/jquery.js":{"url":"//exp.bdstatic.com/static/common-jquery/widget/lib/jquery/jquery_250bf24.js","pkg":"common-jquery:p1"},"common:widget/lib/tangram/fx/move/move.js":{"url":"//exp.bdstatic.com/static/common/widget/lib/tangram/fx/move/move_4f6a3cf.js","pkg":"common:p1","deps":["common:widget/lib/tangram/base/base.js","common:widget/lib/tangram/fx/create/create.js"]},"common:widget/ui/red-bao/red-bao.js":{"url":"//exp.bdstatic.com/static/common/widget/ui/red-bao/red-bao_d2adb02.js","pkg":"common:p11","deps":["common:widget/lib/tangram/base/base.js","common:widget/ui/dialog/dialog.js"]},"common:widget/lib/tangram/ui/Carousel/Carousel.js":{"url":"//exp.bdstatic.com/static/common/widget/lib/tangram/ui/Carousel/Carousel_9ed0987.js","pkg":"common:p2","deps":["common:widget/lib/tangram/base/base.js","common:widget/lib/tangram/uiBase/uiBase.js"]},"activity:widget/ui/redbox/redbox.js":{"url":"//exp.bdstatic.com/static/activity/widget/ui/redbox/redbox_58a8c80.js","pkg":"activity:p2","deps":["common:widget/lib/tangram/base/base.js","common:widget/ui/dialog/dialog.js"]},"common-jquery:widget/lib/baidutemplate/baidutemplate.min.js":{"url":"//exp.bdstatic.com/static/common-jquery/widget/lib/baidutemplate/baidutemplate.min_d875663.js","pkg":"common-jquery:p3"},"common-jquery:widget/js/ui/base/base.js":{"url":"//exp.bdstatic.com/static/common-jquery/widget/js/ui/base/base_366a7b8.js","pkg":"common-jquery:p2","deps":["common-jquery:widget/lib/jquery/jquery.js","common-jquery:widget/js/util/event/event.js"]},"common:widget/lib/tangram/base/base.js":{"url":"//exp.bdstatic.com/static/common/widget/lib/tangram/base/base_e37cc01.js","pkg":"common:p0"},"step:widget/header/header.js":{"url":"//exp.bdstatic.com/static/step/widget/header/header_6f356a6.js","pkg":"step:p0","deps":["common:widget/lib/tangram/base/base.js","common:widget/lib/fis/event/event.js","common:widget/ui/log/log.js","common-jquery:widget/lib/jquery/jquery.js","common-jquery:widget/js/logic/text2audio/text2audio.es"]}}});</script><script type="text/javascript" src="./git-flow_files/common_async_js_0_28055ad.js"></script>
+<script type="text/javascript" src="./git-flow_files/common_sync_js_1_b781a69.js"></script>
+<script type="text/javascript" src="./git-flow_files/common_sync_js_2_fa2e9a7.js"></script>
+<script type="text/javascript" src="./git-flow_files/framework_3837307.js"></script>
+<script type="text/javascript" src="./git-flow_files/shimingzhi_4f92ad8.js"></script>
+<script type="text/javascript" src="./git-flow_files/more_ee48533.js"></script>
+<script type="text/javascript" src="./git-flow_files/base_90517ee.js"></script>
+<script type="text/javascript" src="./git-flow_files/type_1800090.js"></script>
+<script type="text/javascript" src="./git-flow_files/querystring_5a8a26f.js"></script>
+<script type="text/javascript" src="./git-flow_files/url_01e4bf7.js"></script>
+<script type="text/javascript" src="./git-flow_files/https_47e4f73.js"></script>
+<script type="text/javascript" src="./git-flow_files/log_c6b7001.js"></script>
+<script type="text/javascript" src="./git-flow_files/audio-list_c5345f0.js"></script>
+<script type="text/javascript" src="./git-flow_files/text2audio_56668f7.js"></script>
+<script type="text/javascript" src="./git-flow_files/return_60f55cc.js"></script>
+<script type="text/javascript" src="./git-flow_files/step_3b906e7.js"></script>
+<script type="text/javascript">!function(){require.async('common:widget/baidu-tongji/baidu-tongji.js', function(b){ b.init('37361125531234067263'); });}();
+!function(){    require.async('step:widget/header/header.js', function (header) {
+        header.init();
+    });
+}();
+!function(){    require.async('step:widget/ui/brand-ads/brand-ads.js',function(ad_log){
+        ad_log.init('');
+    });
+}();
+!function(){    require.async(['common:widget/lib/tangram/base/base.js', 'step:widget/pager/pager.js'], function(T, pager){
+        T.dom.ready(function(){
+            pager.init(1);
+        });
+    });
+}();
+!function(){        F.context({
+            //请求地址
+            "common":'/common',
+            "uoper": '/uoperation',
+            "edit": '/edit/',
+            "logo": 'http://img.baidu.com/img/iknow/exp/logo_uui.jpg',
+            "comment": '/comment/',
+                            "hi": 'https://imgsa.baidu.com/exp/abpic/item/',//空间缩略图片地址
+                        "ucFollowing": '/user/nuc/following',
+            "ucFavorexp": '/user/nuc/favorexp',
+            "title": '怎样在github上发布pre-release和release?',
+            "isLogin" : 1,
+            "username": 'fish_1949',
+            "writerId": '',
+            "maxFollowVote": 9999999,
+            "eid": 'ad310e80e0c1d11848f49e7f',
+            "isFavor":0,
+            "expFavorNum": 1,
+            "feedbackSuc": 1,
+            "MAX_SUC_FAIL_TIMES": 999999,
+            "stepPic": {"amount":11,"stepPic":[{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/dbf554ed2e738bd4a0f3529daa8b87d6267ff909.jpg","stepIndex":0,"picIndex":1,"picIndexInStep":1,"type":"brief"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/718e25c79f3df8dc1d88773dc611728b461028a2.jpg","stepIndex":1,"picIndex":2,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/a84052086e061d95236dcc9470f40ad162d9ca30.jpg","stepIndex":2,"picIndex":3,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/35e940df8db1cb13eb00ddbfd654564e93584bf6.jpg","stepIndex":3,"picIndex":4,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/35da1d3b5bb5c9ea4f98e24fde39b6003bf3b3f0.jpg","stepIndex":4,"picIndex":5,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/b13fd48065380cd7fd4d4341aa44ad3458828188.jpg","stepIndex":5,"picIndex":6,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/808a27dbb6fd52660f66ddb8a018972bd507368a.jpg","stepIndex":6,"picIndex":7,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/b25d9901a18b87d63f234ab30c0828381e30fdfe.jpg","stepIndex":7,"picIndex":8,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/7ac880510fb30f24a8d40dafc395d143ac4b0395.jpg","stepIndex":8,"picIndex":9,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/8474fbdde71190effb027373c51b9d16fcfa6066.jpg","stepIndex":9,"picIndex":10,"picIndexInStep":1,"type":"step"},{"src":"https:\/\/imgsa.baidu.com\/exp\/pic\/item\/4a77b2af2edda3cc0731598c0ae93901203f9202.jpg","stepIndex":9,"picIndex":11,"picIndexInStep":2,"type":"step"}]},
+            "BdStoken" : "3b5e60e916a14fb7b211dc6d9e3f2287",
+            "bdstt" : "1523591110",
+            'typeId': 2016
+        });
+        
+        require.async(["common:widget/lib/tangram/base/base.js", "step:widget/ui/adjust-size/adjust-size.js", "step:widget/ui/step-album/step-album.js", "step:widget/ui/vote-favor/vote-favor.js", "step:widget/ui/user-guide/user-guide.js", "common:widget/ui/log/log.js"], function(T, adjustSize, stepAlbum, header, userGuide, log){
+            T.dom.ready(function(){
+                if(T.browser.ie && T.browser.ie == 6){
+                    T.dom.setStyle("waiting-step-loading", "height", T.page.getViewHeight()-75);
+                }
+                if(F.context('isBrandAd')){
+                    adjustSize.init({
+                        'img-text-area-withhead':{
+                            height: 360,
+                            width:270,
+                            spaceHeight:107
+                        }
+                    });
+                }else{
+                    adjustSize.init();
+                }
+                
+                adjustSize.resize(1);
+                T.hide("waiting-step-loading");
+                T.on(window, "resize", function(){
+                    adjustSize.resize();
+                });
+                userGuide.init();
+                stepAlbum.init();
+                header.init("vote-btn", "favor-btn", F.context("isFavor"));
+
+                log.init({
+                    query : 'a',        //需要绑定的标签元素，可选，默认为a标签
+                    evtType : 'click',   //鼠标事件定义，可选，默认是click
+                    type: F.context('typeId'),
+                    page: 'step'
+                });
+
+                //左侧推广位
+                /*LeftPromotion.init({
+                    imgSrc: 'http://jingyan.baidu.com/event/img/hb92X240.gif',
+                    url: 'http://jingyan.baidu.com/activity/hongbao201411?fr=step',
+                    target: 'step-play-container'
+                });*/
+            });
+        });
+    }();
+!function(){        require.async('common-jquery:widget/js/logic/https/https.es', function (https) {
+            // 自动修复https里的超链接
+            https.autoFixAnchor();
+        });
+    }();
+!function(){    function monitorHTTPWarning(ignore) {
+        var cache = {};
+
+        var selector = ['link', 'script', 'img', 'embed', 'iframe'];
+        var knownHost = ['jingyan.baidu.com', 'hm.baidu.com', 'exp.bdstatic.com', 'himg.bdimg.com', 'img.baidu.com', 'kstj.baidu.com', 'hiphotos.baidu.com'];
+
+        function monitor() {
+            selector.reduce(function (partial, v) {
+                var arr = document.getElementsByTagName(v);
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    partial.push(arr[i]);
+                }
+                return partial;
+            }, [])
+            .forEach(function (v) {
+                var url = v.href || v.src || '';
+                // 只统计http开头
+                if (url.indexOf('http:') !== 0) {
+                    return 1;
+                }
+
+                // 避免重复发请求
+                if (cache[url]) {
+                    cache[url] += 1;
+                    return 2;
+                }
+                
+                // 忽略已知域名
+                if (ignore && knownHost.some(function (v) {return ~url.indexOf(v)})) {
+                    return 3;
+                }
+                cache[url] = 1;
+                var img = new Image();
+                img.src = '//kstj.baidu.com/v.gif?'
+                    + 'pid=180&type=2000&module=common&page=https&action=warning&t=' + Date.now()
+                    + '&curl=' + encodeURIComponent(location.href)
+                    + '&rurl=' + encodeURIComponent(url)
+            });
+        }
+
+        // 1 8 27 64 125
+        for(var i = 1; i < 6; i++) {
+            (function (i){
+                setTimeout(function(){
+                    monitor();
+                }, i*i*i*1000);
+            })(i);
+        }
+    }
+
+    if (Math.floor(Math.random() * 100) < 100) {
+        monitorHTTPWarning(0);
+    }
+}();</script>
+<script> var _trace_page_logid = 2709953641; </script><div style="position: static; display: none; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;"><div id="trans-tooltip"><div id="tip-left-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-top.png&quot;);"></div><div id="tip-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-top.png&quot;) repeat-x;"></div><div id="tip-right-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-top.png&quot;);"></div><div id="tip-right" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right.png&quot;) repeat-y;"></div><div id="tip-right-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-bottom.png&quot;);"></div><div id="tip-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-bottom.png&quot;) repeat-x;"></div><div id="tip-left-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-bottom.png&quot;);"></div><div id="tip-left" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left.png&quot;);"></div><div id="trans-content"></div></div><div id="tip-arrow-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-bottom.png&quot;);"></div><div id="tip-arrow-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-top.png&quot;);"></div></div><div id="album-box-layerundefined" class="album-box-layer" hasshown="hidden" style="display: none;"></div><div id="album-boxundefined" class="album-box" style="top: 0px; display: none;"><a class="close-btn" title="关闭相册"></a><div id="album-box-contentundefined" class="album-box-content"><img id="currentAlbumImgundefined" src="./git-flow_files/718e25c79f3df8dc1d88773dc611728b461028a2.jpg" style="margin-top: 0px; width: 455.771px;"></div><div id="left-areaundefined" class="left-area" style="width: 50%; height: 593px;"></div><div id="right-areaundefined" class="right-area" style="width: 50%; height: 593px;"></div><div id="album-box-bottomundefined" class="album-box-bottom"><div class="album-playlist-container" id="album-playlist-containerundefined" style="width:385px"><div class="album-playlist"><img src="./git-flow_files/dbf554ed2e738bd4a0f3529daa8b87d6267ff909.jpg" style=""><img src="./git-flow_files/718e25c79f3df8dc1d88773dc611728b461028a2.jpg" class="current" style="" _width="641" _height="834" loaded="1"><img src="./git-flow_files/a84052086e061d95236dcc9470f40ad162d9ca30.jpg" style=""><img src="./git-flow_files/35e940df8db1cb13eb00ddbfd654564e93584bf6.jpg" style=""><img src="./git-flow_files/35da1d3b5bb5c9ea4f98e24fde39b6003bf3b3f0.jpg" style=""><img src="./git-flow_files/b13fd48065380cd7fd4d4341aa44ad3458828188.jpg" style="display: none;"><img src="./git-flow_files/808a27dbb6fd52660f66ddb8a018972bd507368a.jpg" style="display: none;"><img src="./git-flow_files/b25d9901a18b87d63f234ab30c0828381e30fdfe.jpg" style="display: none;"><img src="./git-flow_files/7ac880510fb30f24a8d40dafc395d143ac4b0395.jpg" style="display: none;"><img src="./git-flow_files/8474fbdde71190effb027373c51b9d16fcfa6066.jpg" style="display: none;"><img src="./git-flow_files/4a77b2af2edda3cc0731598c0ae93901203f9202.jpg" style="display: none;"></div></div></div></div></body></html>
